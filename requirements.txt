@@ -1,2 +1,4 @@
 plumber
 xgboost
+jsonlite
+stats

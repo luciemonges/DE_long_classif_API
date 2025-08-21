@@ -1,4 +1,4 @@
-FROM rocker/r-base:4.3.1
+FROM rocker/r-ver:4.3.1
 
 # Install system libraries required for common R packages
 RUN apt-get update && apt-get install -y \
@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Plumber and other required R packages
-RUN R -e "install.packages(c('plumber', 'jsonlite','xgboost'), repos = 'https://cloud.r-project.org')"
+RUN R -e "install.packages(c('plumber', 'jsonlite','xgboost','stats'), repos = 'https://cloud.r-project.org')"
 
 # Debug: print installed packages
 RUN R -e "print(installed.packages()[, c('Package', 'Version')])"
