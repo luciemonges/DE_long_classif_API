@@ -37,7 +37,7 @@ function(req, res) {
   colnames(newdata) = c("F9a.1_1","F9a.2_1","F2.4_1","F2.6_1","F2.10_1","F5.13_1","D1.1_1")
 
   
-  fi_pred =  predict(model, as.matrix(newdata))
+  fi_pred =  stats::predict(model, as.matrix(newdata))
   
   test_prediction  <- matrix(fi_pred, nrow = 7,
                              ncol=length(fi_pred)/7) %>%
