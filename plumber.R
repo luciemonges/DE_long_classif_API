@@ -32,11 +32,17 @@ function(req, res) {
   
   
   
-  newdata = input
-  
-  colnames(newdata) = c("F9a.1_1","F9a.2_1","F2.4_1","F2.6_1","F2.10_1","F5.13_1","D1.1_1")
+  newdata = data.frame(
+    F9a.1_1 = input$Q1_1
+    F9a.2_1 = input$Q1_2
+    F2.6_1 = input$Q3
+    F5.13_1 = input$Q5
+    F2.10_1 = input$Q4
+    F2.4_1 = input$Q2
+    D1.1_1 = input$Q6
+  )
 
-  
+    
   fi_pred =  stats::predict(model, as.matrix(newdata))
   
   test_prediction  <- matrix(fi_pred, nrow = 7,
