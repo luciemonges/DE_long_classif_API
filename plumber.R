@@ -1,5 +1,6 @@
 library(plumber)
 library(xgboost)
+library(dplyr)
 
 
 # Load the saved model
@@ -49,7 +50,7 @@ function(req, res) {
                              ncol=length(fi_pred)/7) %>%
     t() %>%
     data.frame() %>%
-    mutate(max_prob = max.col(., "last"))
+    dplyr::mutate(max_prob = max.col(., "last"))
   
   
   list(segments=(as.character(test_prediction$max_prob)))
