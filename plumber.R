@@ -39,7 +39,7 @@ function(req, res) {
     "F5.13_1" = input$Q5,
     "F2.10_1" = input$Q4,
     "F2.4_1" = input$Q2,
-    "D1.1_1" = input$Q6,
+    "D1.1_1" = input$Q6
   )
 
     
